@@ -34,7 +34,7 @@ class DprGadget : public QWidget
     auto *windowDprLabel = makeLabel("QWindow DPR:", smallFont, true);
     auto *screenDprLabel = makeLabel("Screen DPR:", smallFont, true);
     auto *screenDpiLabel = makeLabel("Screen logical DPI:", smallFont, true);
-    auto *eventsLabel    = makeLabel("", tinyFont, true);
+    // auto *eventsLabel    = makeLabel("", tinyFont, true);
 
     auto *layout = new QVBoxLayout(this);
 
@@ -64,7 +64,7 @@ class DprGadget : public QWidget
     addRow(sizeLabel, nativeSizeLabel);
     addRow(windowDpiLabel, screenDpiLabel);
     addRow(windowDprLabel, screenDprLabel);
-    layout->addWidget(eventsLabel);
+    // layout->addWidget(eventsLabel);
 
     // --- Active environment variables ---
     struct EnvVar { const char *name; const char *label; };
@@ -126,7 +126,7 @@ class DprGadget : public QWidget
         screenLabel->setText(QString("Current Screen: %1").arg(scr->name()));
       }
 
-      eventsLabel->setText(m_eventsText);
+      // eventsLabel->setText(m_eventsText);
     };
 
     m_updateFn = updateValues;
